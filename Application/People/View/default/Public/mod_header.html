@@ -1,0 +1,42 @@
+
+<div class="common-block margin-bottom-15" style="padding-top:10px">
+    <div class="row">
+
+        <if condition="!empty($tag_list)">
+            <div class="col-xs-12">
+                <form id="tag-select" class="form-horizontal" action="{:U('People/Index/index')}" method="post">
+                    <input type="hidden" name="tag" data-role="tag-id">
+                    <input type="hidden" name="keywords" value="{$nickname}">
+                    <volist name="tag_list" id="tag_group">
+                        <div class="tag-select-block clearfix">
+                            <div class="select-cate">{$tag_group.title}：</div>
+                            <div class="select-option">
+                                <volist name="tag_group['tag_list']" id="tag">
+                                    <div class="one_tag"><a data-role="select_tag" data-id="{$tag.id}"
+                                        <if condition="$tag_id eq $tag['id']">class="tag active"
+                                            <else/>
+                                            class="tag"
+                                        </if>
+                                        >{$tag.title}</a></div>
+                                </volist>
+                            </div>
+                        </div>
+                    </volist>
+                </form>
+            </div>
+        </if>
+        <if condition="!empty($tag_list)">
+            <script>
+                $(function () {
+                    $('[data-role="select_tag"]').click(function () {
+                        var id = $(this).attr('data-id');
+                        $('[data-role="tag-id"]').val(id);
+                        $('#tag-select').submit();
+                    });
+                });
+            </script>
+        </if>
+
+    </div>
+
+</div>
