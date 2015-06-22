@@ -15,5 +15,5 @@
 define('UC_APP_ID', 1); //应用ID
 define('UC_API_TYPE', 'Model'); //可选值 Model / Service
 define('UC_AUTH_KEY', 'MKs3RctWuXQnUZT28LBqzwaNfOPxih07ACoE1Sej'); //加密KEY
-define('UC_DB_DSN', 'mysqli://huntdreams:Ttp649__Huntdreams_KJ@huntdreams.gotoftp3.com/opensns'); // 数据库连接，使用Model方式调用API必须配置此项
+define('UC_DB_DSN', 'mysqli://huntdreams:Ttp649__Huntdreams_KJ@huntdreams.gotoftp3.com/huntdreams'); // 数据库连接，使用Model方式调用API必须配置此项
 define('UC_TABLE_PREFIX', 'ocenter_'); // 数据表前缀，使用Model方式调用API必须配置此项
