@@ -142,7 +142,7 @@ class AdminConfigBuilder extends AdminBuilder
         return $this->key($name, $title, $subtitle, 'checkbox', $options);
     }
 
-    public function keyEditor($name, $title, $subtitle = null, $config = '', $style = array('width' => '500px', 'height' => '400px'))
+    public function keyEditor($name, $title, $subtitle = null, $config = '', $style = array('width' => '900px', 'height' => '500px'))
     {
         $toolbars = "toolbars:[[" . $config . "]]";
         if (empty($config)) {
