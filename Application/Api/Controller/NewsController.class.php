@@ -15,8 +15,19 @@ class NewsController extends Controller{
      * 下拉刷新获得最新数据
      */
     public function getLatestNews(){
-        $count = I('post.count','intval',0);
-
+        $lastId = I('get.lastid','intval',0);
+        $news = M('News')->where(array('id' => array('gt',$lastId)))->select();
+        if($news != null){
+            $res = array(
+                'status' => 1,
+                'data' => $news
+            );
+        }else{
+            $res = array(
+                'status' => 0
+            );
+        }
+        echo json_encode($res);
     }
-
+    
 } 
