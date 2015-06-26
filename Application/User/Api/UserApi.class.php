@@ -63,6 +63,7 @@ class UserApi extends Api{
         }else{
             if(UC_SYNC && $username != get_username(1)){
                 return $this->ucLogin($username, $password);
+
             }
             return $this->model->login($username, $password, $type);
         }

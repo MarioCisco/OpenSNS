@@ -73,9 +73,9 @@ class IndexController extends Controller{
         }
         unset($val);
         /* 模板赋值并渲染模板 */
-//        $this->assign('list', $list);
-//        $this->assign('category', $category);
-//        $this->assign('totalCount',$totalCount);
+        $this->assign('list', $list);
+        $this->assign('category', $category);
+        $this->assign('totalCount',$totalCount);
 
 //        $this->display();
         echo json_encode($list);
