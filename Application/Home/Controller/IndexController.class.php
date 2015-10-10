@@ -93,6 +93,15 @@ class IndexController extends Controller
         return '' === $str ? '' : md5(sha1($str) . $key);
     }
 
+    /**
+     * 获得密码
+     */
+    public function getPwd(){
+        define('UC_AUTH_KEY', 'oU<EF=;WD(%2}BH8ya,Nx*0szp]McZtK)_TOfmkh'); //加密KEY
+        $pwd = 'lingke_admin';
+        $password = $this->think_ucenter_md5($pwd, UC_AUTH_KEY);
+        dump($password);
+    }
 
 
 }
